@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cerberus</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render 'layouts/head' %>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render 'layouts/notifications'%>
     <%= render 'layouts/login'%>
     <%= yield %>
   </body>

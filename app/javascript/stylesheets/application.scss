@@ -1,3 +1,28 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+body {
+    @apply bg-gray-900 text-white
+}
+
+.msg-box {
+    @apply absolute inset-x-0 bottom-0 h-8 mx-5 mb-20
+}
+
+.notice {
+    @apply bg-gray-600 text-white 
+}
+
+.msg {
+    @apply py-4 px-10 rounded m-2 w-auto text-center
+}
+
+
+.notice {
+    @apply bg-gray-600 text-white 
+}
+
+.alert {
+    @apply bg-red-800 text-white 
+}

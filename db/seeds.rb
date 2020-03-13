@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 # require '../test/factory_bot.rb'
-user = FactoryBot::build(:user)
+user = User.new
 user.email = 'admin@example.com'
-user.password = 'admin'
-user.save
+user.password = 'adminadmin'
+user.save!
+
+
+template = FactoryBot::create(:template)
+document = FactoryBot::create(:document, template_id: template.id)
