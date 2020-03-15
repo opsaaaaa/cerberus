@@ -1,9 +1,21 @@
-<% if user_signed_in? %>
 
-    <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+<div class="absolute top-0 right-0 px-2 mx-10 py-1 my-10 text-gray-500">
+    <div class="flex">
+    <% if user_signed_in? %>
 
-<% else %>
-    <%= link_to 'Sign Up', new_user_registration_path %>
-    <%= link_to 'Login', new_user_session_path %>
+        <div class="btn btn-link btn-muted">
+            <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+        </div>
 
-<% end %>
+    <% else %>
+
+        <div class="btn btn-link btn-muted">
+            <%= link_to 'Sign Up', new_user_registration_path %>
+        </div>
+        <div class="btn btn-link btn-muted">
+            <%= link_to 'Login', new_user_session_path %>
+        </div>
+
+    <% end %>
+    </div>
+</div>

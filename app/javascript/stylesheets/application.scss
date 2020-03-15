@@ -6,6 +6,49 @@ body {
     @apply bg-gray-900 text-white
 }
 
+.btn {
+    @apply px-4 py-2
+}
+
+.devise {
+    h1 {
+        @apply text-center
+    }
+}
+
+.actions {
+    input {
+        @apply rounded px-4 py-2 bg-teal-700 text-gray-200 font-bold
+    }
+    input:hover {
+        @apply bg-teal-600 text-white font-bold border-2 border-blue-700
+    }
+}
+
+.field {
+    label {
+        @apply mt-3
+    }
+    input {
+        @apply rounded px-4 py-2 bg-gray-700 text-white
+    }
+}
+
+h1 {
+    @apply text-2xl
+}
+
+.btn-muted {
+    @apply text-gray-500   
+}
+.btn-muted:hover {
+    @apply text-white
+}
+
+.btn-link {
+    @apply underline
+}
+
 .msg-box {
     @apply absolute inset-x-0 bottom-0 h-8 mx-5 mb-20
 }
