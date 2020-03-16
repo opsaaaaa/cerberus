@@ -1,4 +1,4 @@
-<h2>Resend confirmation instructions</h2>
+<h1 class="mb-5">Resend confirmation instructions</h1>
 
 <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -9,7 +9,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
+    <%= f.submit "Resend confirmation instructions", class: 'btn btn-primary flex' %>
   </div>
 <% end %>
 

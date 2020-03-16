@@ -32,6 +32,9 @@ body {
     }
 }
 
+.actions {
+    @apply my-5 flex flex-wrap
+}
 
 .field {
     label {
