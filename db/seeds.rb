@@ -12,5 +12,12 @@ user.password = 'adminadmin'
 user.save!
 
 
-template = FactoryBot::create(:template)
-document = FactoryBot::create(:document, template_id: template.id)
+template1 = FactoryBot::create(:template)
+template2 = FactoryBot::create(:template)
+
+7.times do 
+    FactoryBot::create(:document, template_id: template1.id)
+end
+7.times do 
+    FactoryBot::create(:document, template_id: template2.id)
+end

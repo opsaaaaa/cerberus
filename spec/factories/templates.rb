@@ -11,7 +11,7 @@ FactoryBot.define do
           </p>
       </div>
     '}
-    name { Faker::Lorem.words }
+    name { Faker::Lorem.word }
     keys {{ title:'#title', body:'#body' }}
   end
 end

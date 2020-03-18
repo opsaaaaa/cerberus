@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<%= render 'utilities/title', title: @template.name  %>
+
+<p>
+    <%= @template.body %>
+</p>
+<p>
+    <%= @template.keys %>
+</p>
 
 <%= link_to 'Edit', edit_template_path(@template) %> |
 <%= link_to 'Back', templates_path %>

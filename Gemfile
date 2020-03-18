@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'faker', '~> 2.10', '>= 2.10.2'
 
 # Users and login
 gem 'devise', '~> 4.2'
@@ -41,7 +42,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.9', '>= 3.9.1'
   # factorys
   gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
-  gem 'faker', '~> 2.10', '>= 2.10.2'
 end
 
 group :development do

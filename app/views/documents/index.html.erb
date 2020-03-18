@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Documents</h1>
-
+<%= render 'utilities/title', title: 'Documents'  %>
 <table>
   <thead>
     <tr>
@@ -12,6 +10,7 @@
   <tbody>
     <% @documents.each do |document| %>
       <tr>
+        <td><%= document.name %></td>
         <td><%= link_to 'Show', document %></td>
         <td><%= link_to 'Edit', edit_document_path(document) %></td>
         <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
