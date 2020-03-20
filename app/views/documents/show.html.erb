@@ -7,6 +7,8 @@
   <%= @document.template_id %>
 </p>
 
+<chips-show :content="<%= @document.content.to_json %>"></chips-show>
+
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>
