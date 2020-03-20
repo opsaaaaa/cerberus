@@ -8,16 +8,15 @@
 export default {
   props: ["mortises", "tenons", "layout"],
   data: function() {
+
+    // TODO: seprate this out into a node package or something
     var div = document.createElement('div')
     div.innerHTML = this.layout;
-    
-    var result = {};
     for (const [key, val] of Object.entries(this.mortises)) {
       div.querySelector(val).innerHTML = this.tenons[key];
     }
     
-    result.content = div.innerHTML;
-    return result;
+    return {content: div.innerHTML};
   },
 }
 </script>
