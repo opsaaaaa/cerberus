@@ -7,7 +7,6 @@
 <script>
 export default {
   props: ["mortises", "tenons", "layout"],
-  partials: {"my-partial": "<div>This shoudddld be replaced</div>"},
   data: function() {
     var div = document.createElement('div')
     div.innerHTML = this.layout;
