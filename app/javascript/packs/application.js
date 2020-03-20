@@ -24,10 +24,12 @@ Vue.use(TurbolinksAdapter)
 // import componets
 import App from '../app.vue'
 import ChipsShow from '../chips_show.vue'
+import ChipsData from '../chips_data.vue'
 
 // Declare vue components  
 Vue.component('app', App)
 Vue.component('chips-show', ChipsShow)
+Vue.component('chips-data', ChipsData)
 
 // Define the app mounting element
 document.addEventListener('turbolinks:load', () => {

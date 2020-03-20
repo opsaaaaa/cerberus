@@ -2,12 +2,10 @@ FactoryBot.define do
   factory :template do
     body {'
       <div>
-          <h1>
-              <div id="title"></div>
+          <h1 id="title">
           </h1>
 
-          <p>
-              <span id="body"></span>   
+          <p id="body">   
           </p>
       </div>
     '}

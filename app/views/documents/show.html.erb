@@ -1,13 +1,13 @@
 <%= render 'utilities/title', title: @document.name  %>
-<p>
-  <%= @document.content %>
-</p>
 
-<p>
-  <%= @document.template_id %>
-</p>
 
-<chips-show :content="<%= @document.content.to_json %>"></chips-show>
+<chips-show 
+  :tenons="<%= @document.content.to_json %>"
+  :mortises="<%= @document.template.keys.to_json %>"
+  :layout="<%= @document.template.body.to_json%>"
+  ></chips-show>
+
+<chips-data :content="<%= @document.content.to_json %>"></chips-data>
 
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
