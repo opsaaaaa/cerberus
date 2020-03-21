@@ -3,8 +3,8 @@
 
 <chips-show 
   :tenons="<%= @document.content.to_json %>"
-  :mortises="<%= @document.template.keys.to_json %>"
-  :layout="<%= @document.template.body.to_json%>"
+  :mortises="<%= @template.keys.to_json %>"
+  :layout="<%= @template.body.to_json%>"
   ></chips-show>
 
 <chips-data :content="<%= @document.content.to_json %>"></chips-data>

@@ -29,6 +29,7 @@ gem 'faker', '~> 2.10', '>= 2.10.2'
 # Users and login
 gem 'devise', '~> 4.2'
 
+gem 'draper'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
