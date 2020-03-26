@@ -1,24 +1,40 @@
-# README
+Development TLDR
+================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Install the following:
 
-Things you may want to cover:
+- rvm
+- yarn
+- nvm
+- npm
+- rails
+- postgres
 
-* Ruby version
+Create a postgres user
+```
+$ sudo su - postgres
+$ psql -U postgres
+# CREATE ROLE mysuperuser2 WITH SUPERUSER CREATEDB CREATEROLE LOGIN ENCRYPTED PASSWORD 'mysuperpass2';
+```
 
-* System dependencies
+Installers
+```
+$ bundle install
+$ yarn install
+$ npm install
+```
 
-* Configuration
+Init the development database
+```
+$ rake db:create
+$ rake db:migrate
+$ rake db:seed 
+```
 
-* Database creation
+Start server
+```
+$ rails server
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+$ ./bin/webpack-dev-server
+```
+[local server](localhost:3000)
