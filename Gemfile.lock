@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/opsaaaaa/template_chips.git
+  revision: 444b50f4bb8608aa160552f2fb9b10d8c6a18e2c
+  specs:
+    template_chips (0.1.0)
+      nokogiri (>= 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -233,7 +240,6 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
-    vuejs (1.0.39)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (4.0.1)
@@ -280,9 +286,9 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)
+  template_chips!
   turbolinks (~> 5)
   tzinfo-data
-  vuejs
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)

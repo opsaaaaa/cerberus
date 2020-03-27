@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_03_11_025633) do
     t.string "name"
     t.text "body"
     t.jsonb "keys"
+    t.text "vue_cache"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

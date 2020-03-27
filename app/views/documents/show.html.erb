@@ -1,11 +1,14 @@
 <%= render 'utilities/title', title: @document.name  %>
 
 
-<chips-show 
+
+<br>
+
+<chips-show
+  inline-template
   :tenons="<%= @document.content.to_json %>"
   :mortises="<%= @template.keys.to_json %>"
-  :layout="<%= @template.body.to_json%>"
-  ></chips-show>
+  ><div><%= @template.vue.html_safe %></div></chips-show>
 
 <chips-data :content="<%= @document.content.to_json %>"></chips-data>
 
