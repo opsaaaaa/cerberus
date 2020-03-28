@@ -6,14 +6,14 @@ class Template < ApplicationRecord
     # include Chips::Template
 
     def vue
-        return self.vue_cache if self.vue_cache.present?
-        self.vue_cache = Chips::Template::Processor.new(
-            self.body, 
-            mortises: self.keys, 
-            tenons: get_vue_tenons
-        ).generate
-        self.save!
-        return self.vue_cache
+        # return self.vue_cache if self.vue_cache.present?
+        # self.vue_cache = Chips::Template::Processor.new(
+        #     self.body, 
+        #     mortises: self.keys, 
+        #     tenons: get_vue_tenons
+        # ).generate
+        # self.save!
+        return self.body
     end
     
     def get_vue_tenons
