@@ -3,9 +3,11 @@ FactoryBot.define do
     body {'
       <div>
           <h1 id="title">
+            {{ title }}
           </h1>
 
-          <p id="body">   
+          <p id="body">
+            {{ body }}
           </p>
       </div>
     '}
