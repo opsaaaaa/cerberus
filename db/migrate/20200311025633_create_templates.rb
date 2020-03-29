@@ -2,10 +2,13 @@ class CreateTemplates < ActiveRecord::Migration[6.0]
   def change
     create_table :templates do |t|
       t.string :name
-      t.text :body
-      t.jsonb :keys, null: true
-      t.text :vue_cache, null: true
+      t.jsonb :content, null: true
       
+      t.jsonb :rules, null: true
+
+      t.bigint :show_id
+      t.bigint :form_id
+
       t.timestamps
     end
   end
