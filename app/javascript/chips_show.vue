@@ -1,7 +1,7 @@
 
 <script>
 export default {
-  props: ["mortises", "tenons"],
+  props: ["tenons"],
   data: function() {
     return this.tenons;
   },
