@@ -5,7 +5,5 @@ RSpec.describe "documents/show", type: :view do
     @document = assign(:document, Document.create!())
   end
 
-  it "renders attributes in <p>" do
-    render
-  end
+  it "renders attributes in <p>" 
 end

@@ -8,7 +8,5 @@ RSpec.describe "documents/index", type: :view do
     ])
   end
 
-  it "renders a list of documents" do
-    render
-  end
+  it "renders a list of documents" 
 end
