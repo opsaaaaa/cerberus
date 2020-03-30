@@ -17,21 +17,29 @@ require("stylesheets/application.scss")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-import TurbolinksAdapter from 'vue-turbolinks'
 import Vue from 'vue/dist/vue.esm'
-Vue.use(TurbolinksAdapter)
+import VueResource from 'vue-resource'
+import TurbolinksAdapter from 'vue-turbolinks'
+
+Vue.use(TurbolinksAdapter);
+Vue.use(VueResource);
 
 // import componets
 import App from '../app.vue'
 import ChipsShow from '../chips_show.vue'
 import ChipsData from '../chips_data.vue'
+import DocForm from '../doc_form.vue'
 
 // Declare vue components  
 Vue.component('app', App)
 Vue.component('chips-show', ChipsShow)
+Vue.component('doc-form', DocForm)
 Vue.component('chips-data', ChipsData)
 
 // Define the app mounting element
 document.addEventListener('turbolinks:load', () => {
-  const app = new Vue({ el: '[data-front="vue"]' })
+  Vue.http.headers.common['X-CSRF'] = document
+    .querySelector('meta[name="csrf-token"]')
+    .getAttribute('content');
+  const app = new Vue({ el: '[data-front="vue"]' });
 })
