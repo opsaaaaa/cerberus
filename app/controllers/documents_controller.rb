@@ -1,4 +1,5 @@
 class DocumentsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_document, only: [:edit, :update, :destroy]
 
   # GET /documents
@@ -73,6 +74,6 @@ class DocumentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def document_params
-      params.fetch(:document, {})
+      params.require(:document).permit(:name, :content, :template_id)
     end
 end

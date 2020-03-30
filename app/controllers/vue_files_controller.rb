@@ -1,4 +1,5 @@
 class VueFilesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_vue_file, only: [:show, :edit, :update, :destroy]
 
   # GET /vue_files
