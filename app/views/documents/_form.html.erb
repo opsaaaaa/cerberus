@@ -1,5 +1,6 @@
-
+<% @document = @document.decorate %>
 <doc-form 
-  :document="<%= @document.decorate.attributes %>"
+  :document="<%= @document.attributes %>"
   :templates="<%= [{name: 'template name', id: 1}].to_json %>"
+  :content="<%= @document.content %>"
   ></doc-form>

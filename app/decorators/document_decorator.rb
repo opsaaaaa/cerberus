@@ -10,4 +10,8 @@ class DocumentDecorator < Draper::Decorator
     return object.to_json(only: [:id, :name, :content, :template_id])
   end
 
+  def content
+    return object.content.to_json
+  end
+
 end

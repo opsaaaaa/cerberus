@@ -1,21 +1,50 @@
 <template>
   <div>
 
-    <div class="field">
-      <label>Name</label><br>
-      <input 
-        v-model="document.name" 
-        placeholder="name"
-        >
+    <div class="flex">
+      <div class="field">
+        <label class="w-full">Name</label><br>
+        <input 
+          v-model="document.name" 
+          placeholder="name"
+          >
+      </div>
+    
+      <div class="field">
+        <label class="w-full">Template</label><br>
+        <input 
+          v-model="document.template_id" 
+          placeholder="template"
+          >
+      </div>
     </div>
-  
-    <div class="field">
-      <label>Template</label><br>
-      <input 
-        v-model="document.template_id" 
-        placeholder="template"
-        >
+
+    <h4>Content</h4>
+
+    <div v-for="(tenon, index) in document.content">
+      <div class="field flex">
+        <div class="flex mr-1" 
+          ><input
+            v-model="tenon.key" 
+            placeholder="name"
+            /></div>
+        <div class="flex mr-1" 
+          ><input
+          v-model="tenon.value" 
+          placeholder="name"
+          /></div>
+        <div class="flex mr-1" 
+          ><button 
+            class="btn flex" 
+            v-on:click="removeTenon(index)"
+            >Remove</button></div>
+      </div>
     </div>
+
+    <div class="actions">
+      <button class="btn" v-on:click="addTenon">Add Item</button>
+    </div>
+
 
     <div class="actions">
       <button
@@ -31,10 +60,22 @@
 export default {
   props: ["document", "templates"],
   data: function() {
-    return {document: this.document, templates: this.templates}
+    return {
+      document: this.document, 
+      templates: this.templates}
   },
   methods: {
+    addTenon: function(){
+      this.document.content.push({
+        key: "",
+        value: ""
+      })
+    },
+    removeTenon: function(index){
+      this.document.content.splice(index, 1)
+    },
     saveDocument: function() {
+      this.document.content = JSON.stringify(this.document.content)
       if (this.document.id == null) {
         this.$http.post('/documents', {document: this.document})
           .then(response => {
