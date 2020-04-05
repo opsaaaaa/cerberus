@@ -50,7 +50,7 @@ RSpec.configure do |config|
   #
   #     RSpec.describe UsersController, :type => :controller do
   #       # ...
-  #     end
+  #     end  
   #
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
@@ -60,4 +60,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include Devise::Test::IntegrationHelpers, type: :request
 end

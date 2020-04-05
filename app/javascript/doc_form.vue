@@ -75,7 +75,10 @@ export default {
       this.document.content.splice(index, 1)
     },
     saveDocument: function() {
+      // TODO this dose not work
       this.document.content = JSON.stringify(this.document.content)
+      // instead leave document.content blank and add it after the fact. 
+
       if (this.document.id == null) {
         this.$http.post('/documents', {document: this.document})
           .then(response => {

@@ -1,6 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Documents", type: :request do
+  
+  let(:user) {FactoryBot::create(:user)}
+  before(:each) { sign_in user }
+  
   describe "GET /documents" do
     it "works! (now write some real specs)" do
       get documents_path
