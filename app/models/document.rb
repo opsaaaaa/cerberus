@@ -1,6 +1,6 @@
 class Document < ApplicationRecord
     belongs_to :template
-    before_validation :convert_string_content_to_json
+    before_save :parse_json_content
 
     def merge_content
         # return self.content + self.template.content
@@ -13,9 +13,9 @@ class Document < ApplicationRecord
 
     private
 
-    def convert_string_content_to_json
-        # $stdout.puts(self.content)
-        # $stdout.puts(JSON.parse(self.content))
-        # self.content = JSON.parse(self.content)
+    def parse_json_content
+        if self.content.is_a? String
+            self.content = JSON.parse(self.content)
+        end
     end
 end

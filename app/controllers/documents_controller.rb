@@ -45,7 +45,6 @@ class DocumentsController < ApplicationController
   # PATCH/PUT /documents/1
   # PATCH/PUT /documents/1.json
   def update
-    set_content()
     respond_to do |format|
       if @document.update(document_params)
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
@@ -71,9 +70,6 @@ class DocumentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_document
       @document = Document.find(params[:id])
-    end
-
-    def set_content
     end
 
     # Only allow a list of trusted parameters through.
