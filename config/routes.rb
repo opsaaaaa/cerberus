@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :vue_files
   resources :templates
   resources :documents
   devise_for :users

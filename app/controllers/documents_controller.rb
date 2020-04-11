@@ -1,5 +1,6 @@
 class DocumentsController < ApplicationController
-  before_action :set_document, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_document, only: [:edit, :update, :destroy]
 
   # GET /documents
   # GET /documents.json
@@ -21,6 +22,8 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1/edit
   def edit
+    @document = DocumentDecorator.find(params[:id])
+    @dumdum = "pi"
   end
 
   # POST /documents
@@ -42,6 +45,7 @@ class DocumentsController < ApplicationController
   # PATCH/PUT /documents/1
   # PATCH/PUT /documents/1.json
   def update
+    set_content()
     respond_to do |format|
       if @document.update(document_params)
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
@@ -69,8 +73,11 @@ class DocumentsController < ApplicationController
       @document = Document.find(params[:id])
     end
 
+    def set_content
+    end
+
     # Only allow a list of trusted parameters through.
     def document_params
-      params.fetch(:document, {})
+      params.require(:document).permit(:name, :content, :template_id)
     end
 end

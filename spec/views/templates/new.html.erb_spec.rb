@@ -5,10 +5,5 @@ RSpec.describe "templates/new", type: :view do
     assign(:template, Template.new())
   end
 
-  it "renders new template form" do
-    render
-
-    assert_select "form[action=?][method=?]", templates_path, "post" do
-    end
-  end
+  it "renders new template form" 
 end

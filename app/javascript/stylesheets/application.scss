@@ -38,6 +38,11 @@ body {
     @apply my-5 flex flex-wrap
 }
 
+
+.field {
+    @apply p-1
+}
+
 .field {
     label {
         @apply mt-3
@@ -47,10 +52,14 @@ body {
     }
 }
 
+
+
 h1 {
     @apply text-2xl
 }
-
+h4 {
+    @apply text-lg py-4
+}
 
 .msg-box {
     @apply absolute inset-x-0 bottom-0 h-8 mx-5 mb-20
