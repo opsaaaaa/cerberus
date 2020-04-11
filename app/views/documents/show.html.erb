@@ -4,6 +4,8 @@
 <%= @document.content  %>
 <br>
 
+<div class='jacob  py-10'>
+
 <chips-show
   inline-template
   :tenons="<%= @document.tenons.to_json %>"
@@ -11,6 +13,9 @@
 
 <chips-data :content="<%= @document.content.to_json %>"></chips-data>
 
+<div class='jacob pt-10'>
 
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to 'Edit', edit_document_path(@document), class: "py-1 my-10 text-gray-500 bold"%> |
+<%= link_to 'Back', documents_path, class: "py-1 my-10 text-gray-500 bold" %>
+
+</div>
