@@ -1,15 +1,13 @@
 <%= render 'utilities/title', title: @document.name  %>
 
 
-<%= @document.content  %>
-<br>
+<% @document = @document.decorate  %>
 
 <chips-show
   inline-template
-  :tenons="<%= @document.tenons.to_json %>"
+  :content="<%= @document.content %>"
+  :properties="<%= @document.properties %>"
   ><div><%= @template.vue_show %></div></chips-show>
-
-<chips-data :content="<%= @document.content.to_json %>"></chips-data>
 
 
 <%= link_to 'Edit', edit_document_path(@document) %> |

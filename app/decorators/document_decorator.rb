@@ -3,7 +3,7 @@ class DocumentDecorator < Draper::Decorator
   decorates :document
 
   def properties
-    return object.to_json(only: [:id, :name, :template_id])
+    return object.to_json(only: [:name])
   end
 
   def attributes
