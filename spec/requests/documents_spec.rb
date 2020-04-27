@@ -3,7 +3,12 @@ require 'rails_helper'
 RSpec.describe "Documents", type: :request do
   
   let(:user) {FactoryBot::create(:user)}
-  before(:each) { sign_in user }
+  let(:content) {[
+    {"key" => "title","value" => "vitae"},
+    {"key" => "body","value" => "Ad accusantium et. Enim sint molestias. Nihil qui sequi."},
+    {"key"=>"age","value" => "34"}]}
+  
+    before(:each) { sign_in user }
   
   describe "GET /documents" do
     it "works! (now write some real specs)" do
@@ -15,16 +20,12 @@ RSpec.describe "Documents", type: :request do
   
   describe "CREATE /documents" do
     let(:template) {FactoryBot::create(:template)}
-    let(:content) {[
-      {key:"title",value:"vitae"},
-      {key:"body",value:"Ad accusantium et. Enim sint molestias. Nihil qui sequi."},
-      {key:"age",value:"34"}].to_json}
 
     it "works" do
       post documents_path, :params => {
         document: {
           name: "this_test_document",
-          content: content,
+          content: content.to_json,
           template_id: template.id
         }
       }
@@ -39,13 +40,12 @@ RSpec.describe "Documents", type: :request do
   describe "UPDATE /documents/:id" do
     let(:template) {FactoryBot::create(:template)}
     let(:document) {FactoryBot::create(:document)}
-    let(:content) {'[{"key":"title","value":"vitae"},{"key":"body","value":"Ad accusantium et. Enim sint molestias. Nihil qui sequi."},{"key":"age","value":"34"}]'}
 
     it "works" do
       put document_path(document.id), :params => {
         document: {
           name: "this_test_document",
-          content: content,
+          content: content.to_json,
           template_id: template.id
         }
       }

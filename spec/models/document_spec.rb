@@ -8,4 +8,12 @@ RSpec.describe Document, type: :model do
     expect(document.template.id).to eq(template.id)
   end
 
+  descripe "content" do
+    let(:content_str) { "[]" } 
+    it "can be diffrent types" do 
+      document.
+      expect(document)
+    end
+  end
+
 end

@@ -1,21 +1,22 @@
 <%= render 'utilities/title', title: @document.name  %>
 
 
-<%= @document.content  %>
-<br>
+<% @document = @document.decorate  %>
 
-<div class='jacob  py-10'>
 
-<chips-show
-  inline-template
-  :tenons="<%= @document.tenons.to_json %>"
-  ><div><%= @template.vue_show %></div></chips-show>
+<div class='py-3'>
 
-<chips-data :content="<%= @document.content.to_json %>"></chips-data>
+  <chips-show
+    inline-template
+    :content="<%= @document.content %>"
+    :properties="<%= @document.properties %>"
+    ><div><%= @template.vue_show %></div></chips-show>
 
-<div class='jacob pt-10'>
 
-<%= link_to 'Edit', edit_document_path(@document), class: "py-1 my-10 text-gray-500 bold"%> |
-<%= link_to 'Back', documents_path, class: "py-1 my-10 text-gray-500 bold" %>
+</div>
+<div class='py-3'>
+
+  <%= link_to 'Edit', edit_document_path(@document), class: "py-1 my-10 text-gray-500 bold"%> |
+  <%= link_to 'Back', documents_path, class: "py-1 my-10 text-gray-500 bold" %>
 
 </div>
