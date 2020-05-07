@@ -15,9 +15,9 @@ user.save!
 template1 = FactoryBot::create(:template)
 template2 = FactoryBot::create(:template)
 
-7.times do 
+7.times do
     FactoryBot::create(:document, template_id: template1.id)
 end
-7.times do 
+7.times do
     FactoryBot::create(:document, template_id: template2.id)
 end
